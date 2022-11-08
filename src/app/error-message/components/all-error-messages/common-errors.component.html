@@ -1,0 +1,13 @@
+<div class="error" *ngIf="errors.length > 0">
+  <div class="alert bg-danger text-white error-messages">
+    <h6 class="alert-heading mb-2">
+      <mat-icon class="material-icons-outlined">warning</mat-icon>
+      <i class="h2 mb-0 text-white mr-3">
+      </i>
+      To complete this form, Please provide the following...
+    </h6>
+    <ul>
+      <li *ngFor="let error of errors">{{ error }}</li>
+    </ul>
+  </div>
+</div>

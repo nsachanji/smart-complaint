@@ -1,0 +1,8 @@
+<div [class.alert-danger]="hasError" [class.alert]="hasError">
+  <h5 class="alert-heading mb-2" *ngIf="control?.invalid && control?.touched && !skip">
+    <span [innerHTML]="errorMessage"></span>
+  </h5>
+  <div>
+    <ng-content></ng-content>
+  </div>
+</div>

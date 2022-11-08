@@ -1,0 +1,15 @@
+export enum ErrorKeysMap {
+  Required = 'required',
+  Min = 'min',
+  MinLength = 'minlength',
+  MinLengthArray = 'minlengthArray',
+  Max = 'max',
+  MaxLength = 'maxlength',
+  Email = 'email',
+  Pattern = 'pattern',
+  MaximumButtonAction = 'maximumButtonAction',
+  MinimumButtonAction = 'minimumButtonAction',
+  WhiteSpace = 'whitespace',
+  MinResponse = 'minResponse',
+  InvalidMedia = 'invalidMedia',
+}
