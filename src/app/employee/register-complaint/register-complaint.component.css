@@ -1,0 +1,16 @@
+body { padding: 2rem 0; }
+
+.main-content {
+  margin: 10%;
+}
+
+.heading {
+  margin-left: 64%;
+  margin-bottom: 4%;
+}
+
+.complain-box {
+  height: 150px;
+  width: 100%;
+}
+

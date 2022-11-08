@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Login</title>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>
+</head>
+<body>
+<div class="container">
+  <h1> Employee Registration </h1>
+  <hr>
+  <label> Name </label><br>
+  <input type="text" name="name" placeholder="name" size="200" required /><br>
+  <label> Aadhar Number: </label><br>
+  <input type="int" name="aadharId" placeholder="aadharId" size="16" required /><br>
+  <label> Phone : </label><br>
+  <input type="text" name="country code" placeholder="Country Code" value="+91" size="2" /><br>
+  <input type="text" name="phone" placeholder="phone no." size="10" ><br>
+  <label>  Current Address : </label><br>
+  <textarea cols="80" rows="5" placeholder="Current Address" value="address" required></textarea><br>
+  <label> Pin Code: </label><br>
+  <input type="int" name="enter pincode" placeholder="pincode" size="6" required /><br>
+  <label>
+    <b>Email</b>
+  </label><br>
+  <input type="text" placeholder="Enter Email" name="email" required><br>
+  <label>
+    <b>User Name</b>
+  </label><br>
+  <input type="text" placeholder="enter username" name="username" required><br>
+  <label>
+    <b>Password</b>
+  </label><br>
+  <input type="password" placeholder="Enter Password" name="psw" required><br>
+  <label>
+    <b>Re-type Password</b>
+  </label><br>
+  <input type="password" placeholder="Retype Password" name="psw-repeat" required><br>
+  <button href="" type="submit" class="registerbtn" style="align-content: center">Register</button>
+  <button class="registerbtn" style="align-content: center; margin-left: 2%" (click)="loginRedirect()">Login</button>
+
+</div>
+</body>
+</html>

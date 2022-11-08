@@ -1,0 +1,74 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Employee Login</title>-->
+<!--  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.2.0/css/all.css'>-->
+<!--</head>-->
+<!--<body>-->
+<div class="content-bag">
+<div class="container">
+  <h1> Organization Registration </h1>
+  <hr>
+  <app-common-errors [validationErrors]="validationErrors"></app-common-errors>
+  <form [formGroup]="registerForm" (ngSubmit)="registerOrganisation()">
+
+          <label> Organization ID </label>
+          <br>
+          <input type="text" formControlName="organization_id" placeholder="Enter Organization Id" size="200"  />
+          <br>
+        <error-input [control]="registerForm.get('organization_id')">
+        </error-input>
+    <label> Organization Name: </label>
+    <br>
+
+    <input type="text" formControlName="name" placeholder="Enter Organization Name" size="16" />
+    <error-input [control]="registerForm.get('name')">
+    </error-input>
+    <br>
+
+    <label> Phone : </label>
+    <br>
+    <input type="text" formControlName="contact_number" placeholder="Phone" />
+    <br>
+    <error-input [control]="registerForm.get('contact_number')">
+    </error-input>
+
+    <label> Current Address : </label>
+    <br>
+    <textarea cols="80" rows="5" placeholder="Current Address" formControlName="address"></textarea>
+    <br>
+    <error-input [control]="registerForm.get('address')">
+    </error-input>
+
+    <label> Pin Code: </label>
+    <br>
+    <input type="int" name="Enter Pincode" placeholder="pincode" size="6" formControlName="pin_code" />
+    <br>
+    <error-input [control]="registerForm.get('pin_code')">
+    </error-input>
+
+    <label>
+      <b>Password</b>
+    </label>
+    <br>
+    <input type="password" placeholder="Enter Password" formControlName="password">
+    <br>
+    <error-input [control]="registerForm.get('password')">
+    </error-input>
+
+    <label>
+      <b>Re-type Password</b>
+    </label>
+    <br>
+    <input type="password" placeholder="Retype Password" formControlName="confirm_password">
+    <br>
+    <error-input [control]="registerForm.get('confirm_password')">
+    </error-input>
+    <button href="" type="submit" [errorLocalMessages]="registerForm" class="registerbtn" style="align-content: center">Register</button>
+    <button class="registerbtn" style="align-content: center; margin-left: 2%"   (click)="loginRoute()">Login</button>
+  </form>
+</div>
+</div>
+<!--</body>-->
+<!--</html>-->
