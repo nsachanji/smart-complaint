@@ -45,7 +45,7 @@ export class RegisterComponent implements OnInit, ContainsError {
       new UntypedFormControl('', [Validators.required]),
     );
     this.registerForm.addControl(
-      'organization_id',
+      'organisation_id',
       new UntypedFormControl('', [Validators.required]),
     );
     this.registerForm.addControl(

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { ContainsError, ValidationError } from '../../error-message/validation-error';
+import { EmployeeComplaintService } from 'src/app/services/employee-complaint/employee-complaint.service';
 
 @Component({
   selector: 'app-register-complaint',
@@ -16,7 +17,8 @@ export class RegisterComplaintComponent implements OnInit, ContainsError {
    */
   public complaintForm: UntypedFormGroup;
 
-  constructor(public route: Router) {
+  constructor(public route: Router,
+    public employeeComplaintService: EmployeeComplaintService) {
     this.complaintForm = new UntypedFormGroup({})
   }
 
@@ -26,17 +28,18 @@ export class RegisterComplaintComponent implements OnInit, ContainsError {
 
   protected setUpLoginForm(): void {
     this.complaintForm.addControl(
-      'subject',
+      'complaint_subject',
       new UntypedFormControl('', [Validators.required]),
     );
     this.complaintForm.addControl(
-      'description',
+      'complaint_statement',
       new UntypedFormControl('', [Validators.required]),
     );
   }
 
   fileComplaint() {
-    console.log(this.complaintForm.getRawValue())
+    return this.employeeComplaintService.registerComplaint(
+      this.complaintForm.getRawValue()
+    ).subscribe((data) => console.log(data, 'data'))
   }
-
 }

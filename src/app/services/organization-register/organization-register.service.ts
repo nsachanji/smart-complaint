@@ -29,6 +29,6 @@ export class OrganizationRegisterService {
       address: string,
       pin_code: string,
     }): Observable<Organisation> {
-    return this.http.post<Organisation>(this.apiCall.apiUrl('/organisation'), data);
+    return this.http.post<Organisation>(this.apiCall.apiUrl('organisation'), data);
   }
 }

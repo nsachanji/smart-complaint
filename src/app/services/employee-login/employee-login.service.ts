@@ -7,7 +7,7 @@ import { OrganisationLogin } from '../../interfaces/organisation';
 @Injectable({
   providedIn: 'root'
 })
-export class OrganizationLoginService {
+export class EmployeeLoginService {
   constructor(public http: HttpClient, public apiCall: ApiCallService) { }
 
   /**
@@ -20,6 +20,6 @@ export class OrganizationLoginService {
       userName: string,
       password: string,
     }): Observable<OrganisationLogin> {
-    return this.http.post<OrganisationLogin>(this.apiCall.apiUrl('organisation/login'), data);
+    return this.http.post<OrganisationLogin>(this.apiCall.apiUrl('employee/login'), data);
   }
 }

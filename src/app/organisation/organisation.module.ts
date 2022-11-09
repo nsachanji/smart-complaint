@@ -5,8 +5,6 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { OrganisationLoginComponent } from './organisation-login/organisation-login.component';
 
-
-
 @NgModule({
   declarations: [
     RegisterComponent, OrganisationLoginComponent

@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   urlSettings: {
-    baseUrl: 'https://da63-122-160-119-163.in.ngrok.io',
+    baseUrl: 'https://9683-122-161-52-142.in.ngrok.io',
   },
 };
 

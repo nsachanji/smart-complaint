@@ -10,6 +10,7 @@ import { OptionComponent } from './employee/option/option.component';
 import { RegisterComplaintComponent } from './employee/register-complaint/register-complaint.component';
 import { RegisterComponent } from './employee/register/register.component';
 import {RegisterComponent as OrganisationRegisterComponent} from './organisation/register/register.component'
+import { TrackComplaintComponent } from './employee/track-complaint/track-complaint.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'organisation/login', component: OrganisationLoginComponent},
   {path: 'employee/option', component: OptionComponent},
   {path: 'employee/option/complaint', component: RegisterComplaintComponent},
+  {path: 'employee/option/tracking', component: TrackComplaintComponent},
   {path: 'employee/register', component: RegisterComponent},
   {path: 'organisation/register', component: OrganisationRegisterComponent}
 ];

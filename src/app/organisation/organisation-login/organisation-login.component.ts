@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContainsError, ValidationError } from '../../error-message/validation-error';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { OrganizationLoginService } from '../../services/organization-login/organization-login.service'
 
 @Component({
   selector: 'app-organisation-login',
@@ -17,6 +18,7 @@ export class OrganisationLoginComponent implements OnInit, ContainsError {
   public loginForm: UntypedFormGroup;
   constructor(
     private route: Router,
+    public organizationLoginService: OrganizationLoginService,
   ) {
     this.loginForm = new UntypedFormGroup({});
   }
@@ -27,8 +29,8 @@ export class OrganisationLoginComponent implements OnInit, ContainsError {
 
   protected setUpLoginForm(): void {
     this.loginForm.addControl(
-      'email',
-      new UntypedFormControl('', [Validators.required, Validators.email]),
+      'organisation_id',
+      new UntypedFormControl('', [Validators.required]),
     );
     this.loginForm.addControl(
       'password',
@@ -38,12 +40,14 @@ export class OrganisationLoginComponent implements OnInit, ContainsError {
 
   loginFormSubmit() {
     console.log(this.loginForm.getRawValue())
+    return this.organizationLoginService.organizationLogin(
+      this.loginForm.getRawValue()
+    ).subscribe((data) => {
+      console.log(data, 'data')
+    })
   }
 
   registerSubmit() {
     this.route.navigateByUrl('/organisation/register')
   }
-
-
-
 }

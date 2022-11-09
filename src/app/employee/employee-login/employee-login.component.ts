@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContainsError, ValidationError } from '../../error-message/validation-error';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { OrganizationLoginService } from 'src/app/services/organization-login/organization-login.service';
+import { EmployeeLoginService } from 'src/app/services/employee-login/employee-login.service';
 
 @Component({
   selector: 'app-employee-login',
@@ -16,7 +18,8 @@ export class EmployeeLoginComponent implements OnInit, ContainsError {
    */
   public loginForm: UntypedFormGroup;
   constructor(
-    private  route: Router
+    private route: Router,
+    public employeeLoginService: EmployeeLoginService,
   ) {
     this.loginForm = new UntypedFormGroup({})
   }
@@ -27,8 +30,8 @@ export class EmployeeLoginComponent implements OnInit, ContainsError {
 
   protected setUpLoginForm(): void {
     this.loginForm.addControl(
-      'email',
-      new UntypedFormControl('', [Validators.required, Validators.email]),
+      'username',
+      new UntypedFormControl('', [Validators.required]),
     );
     this.loginForm.addControl(
       'password',
@@ -39,6 +42,13 @@ export class EmployeeLoginComponent implements OnInit, ContainsError {
   loginFormSubmit() {
     console.log(this.loginForm.getRawValue())
     this.route.navigateByUrl('/employee/option')
+    return this.employeeLoginService.organizationLogin(
+      this.loginForm.getRawValue()
+    ).subscribe((data) => {
+      console.log(data, 'data')
+      this.route.navigateByUrl('/employee/option')
+    })
+    // console.log(this.loginForm.getRawValue())
   }
   registerNavigate() {
     this.route.navigateByUrl('/employee/register')

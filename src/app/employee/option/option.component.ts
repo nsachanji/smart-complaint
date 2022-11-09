@@ -18,5 +18,7 @@ export class OptionComponent implements OnInit {
   onComplaintRegister() {
     this.router.navigateByUrl('employee/option/complaint')
   }
-
+  onComplaintTracking() {
+    this.router.navigateByUrl('employee/option/tracking')
+  }
 }

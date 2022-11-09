@@ -6,19 +6,15 @@
       <form [formGroup]="complaintForm" (ngSubmit)="fileComplaint()">
         <label class="d-block mb-4">
           <span class="form-label d-block">Subject of the Complain:</span>
-          <input
-            formControlName="subject"
-            type="text"
-            class="form-control"
-            placeholder=""
-          />
-          <error-input [control]="complaintForm.get('subject')">
+          <input formControlName="complaint_subject" type="text" class="form-control" placeholder="" />
+          <error-input [control]="complaintForm.get('complaint_subject')">
           </error-input>
         </label>
         <label class="d-block mb-4">
           <span class="form-label d-block">Brief your Complain : </span>
-          <textarea  formControlName="description" class="complain-box" placeholder="Enter Description"></textarea>
-          <error-input [control]="complaintForm.get('description')">
+          <textarea formControlName="complaint_statement" class="complain-box"
+            placeholder="Enter Description"></textarea>
+          <error-input [control]="complaintForm.get('complaint_statement')">
           </error-input>
         </label>
         <div class="mb-3">

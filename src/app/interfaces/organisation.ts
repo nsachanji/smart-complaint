@@ -9,3 +9,7 @@ export interface Organisation {
   createdOn: string | Date;
   lastUpdate: string | Date;
 }
+export interface OrganisationLogin {
+  userName: string;
+  password: string;
+}
